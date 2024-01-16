@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +8,8 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <title>Beyond Words | Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Beyond Words | {% block title %}{% endblock %}</title>
 </head>
 
 <body>
@@ -27,7 +28,7 @@
         <div class="collapse navbar-collapse" id="my-nav-bar">
             <ul class="navbar-nav my-auto mr-2 ms-auto">
                 <li class="active nav-item">
-                    <a href="/" class="nav-link">
+                    <a href="{% url 'home'}" class="nav-link">
                         Home
                     </a>
                 </li>
@@ -49,34 +50,33 @@
             </ul>
         </div>
     </nav>
-    <!-- Hero image -->
-    <div class="hero-image">
-        <div class="hero-text">
-            <h1>I am John Doe</h1>
-            <p>And I'm a Photographer</p>
-            <button>Hire me</button>
-        </div>
-    </div>
-    <div>
-        <p>Main body of text....</p>
-    </div>
-    <div class="container">
-        <div class="row">
-          <div class="col">
-            Column
-          </div>
-          <div class="col">
-            Column
-          </div>
-          <div class="col">
-            Column
-          </div>
-        </div>
-      </div>
-      <div>
 
-      </div>
-    
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- footer -->
+    <footer class="bg-body-tertiary text-center">
+        <div class="container p-2">
+            <!-- Social Media Icons -->
+            <div>
+                <a class="btn text-white btn-floating m-1" href="https://www.facebook.com/" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="btn text-white btn-floating m-1" href="https://twitter.com/" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a class="btn text-white btn-floating m-1" href="https://www.instagram.com/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="text-center p-1">
+            <p class="text-center uppercase special-text">&copy; Copyright 2023
+                <a href="https://github.com/rachbry" class="special-text" target="_blank">Rachbry</a>
+            </p>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
