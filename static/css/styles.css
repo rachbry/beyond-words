@@ -27,7 +27,7 @@ body, html {
   color: white;
 }
 
-.hero-text button {
+.cta {
     border: none;
     outline: 0;
     display: inline-block;
@@ -38,7 +38,7 @@ body, html {
     cursor: pointer;
   }
   
-  .hero-text button:hover {
+  .cta:hover {
     background-color: #555;
     color: white;
   }
