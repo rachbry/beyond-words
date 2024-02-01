@@ -1,5 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800&family=DM+Serif+Display:ital@0;1&display=swap');
+:root {
+  --blue: #014fb3;
+  --off-white: #f1f1e6;
+  --main-text: 'DM Sans', sans-serif;
+  --heading: 'DM Serif Display', serif;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
 body, html {
     height: 100%;
+    background-color: var(--off-white);
+    font-family: var(--main-text);
+    font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading);
+  font-weight: bold;
+}
+
+#my-nav-bar {
+  background-color: var(--off-white);
 }
 
 /* The hero image */
@@ -29,16 +53,68 @@ body, html {
 
 .cta {
     border: none;
-    outline: 0;
+    outline: none;
     display: inline-block;
     padding: 10px 25px;
-    color: black;
-    background-color: #ddd;
+    color: var(--blue);
+    background-color: var(--off-white);
     text-align: center;
     cursor: pointer;
-  }
+    font-weight: bold;
+    text-decoration: none;
+}
   
-  .cta:hover {
-    background-color: #555;
-    color: white;
+.cta:hover {
+  background-color: var(--blue);
+  color: var(--off-white);
+}
+
+.home-icon {
+  max-height: 70px;
+}
+
+.icon-div {
+  background-color: white;
+  height: auto;
+}
+
+.eco-logo {
+  max-height: 200px;
+  margin: auto;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.image-text {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.image-container:hover .image-text {
+  opacity: 1;
+}
+
+/* Media query for larger screens (adjust the screen size as needed) */
+@media (min-width: 768px) {
+  .icon-div {
+      height: 540px; /* Adjust min-height for larger screens */
   }
+}
+
+/* Media query for larger screens (adjust the screen size as needed) */
+@media (min-width: 1024px) {
+  .icon-div {
+      height: 400px; /* Adjust min-height for larger screens */
+  }
+}
